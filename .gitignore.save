@@ -1,0 +1,15 @@
+x
+huogyiñ
+
+# 5. Agregar archivos
+git add .
+
+# 6. Primer commit
+git commit -m "Initial commit: Sistema taller mecánico con Flask"
+
+# 7. Conectar con GitHub (cambia por tu URL)
+git remote add origin https://github.com/tu-usuario/taller-mecanico.git
+
+# 8. Subir a GitHub
+git branch -M main
+git push -u origin main

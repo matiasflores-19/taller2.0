@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargar Imagen de Patente - Taller Mecánico</title>
+    <link rel="stylesheet" href="/estilos/scan.css">
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-button">← Volver al Inicio</a>
+        
+        <div class="header">
+            <h1>📁 Cargar Imagen de Patente</h1>
+            <p>Selecciona una imagen con la patente del vehículo</p>
+        </div>
+        
+        <div class="scan-container">
+            <div class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">📁</div>
+                    <div class="upload-text">Arrastra una imagen aquí</div>
+                    <div class="upload-subtext">o</div>
+                    <button class="browse-button" onclick="document.getElementById('fileInput').click()">
+                        📸 Seleccionar Archivo
+                    </button>
+                    <input type="file" id="fileInput" class="file-input" accept="image/*" onchange="handleFileSelect(this.files)">
+                </div>
+                
+                <div class="selected-file" id="selectedFile">
+                    <strong>Archivo seleccionado:</strong> 
+                    <span id="fileName"></span>
+                </div>
+                
+                <img id="imagePreview" class="image-preview" alt="Vista previa">
+                
+                <button class="process-button" id="processButton" disabled onclick="processImage()">
+                    🔍 Procesar Patente
+                </button>
+                
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Procesando imagen...</p>
+                </div>
+            </div>
+            
+            <div class="results-section">
+                <div id="patenteResult" class="patente-result">
+                    <p>Selecciona una imagen para procesar la patente</p>
+                </div>
+                
+                <div id="formVehiculo" class="form-vehiculo">
+                    <h3>Registrar Nuevo Vehículo</h3>
+                    <form id="vehicleForm">
+                        <div class="form-group">
+                            <label for="patente">Patente:</label>
+                            <input type="text" id="patente" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="duenio">Dueño:</label>
+                            <input type="text" id="duenio" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="vehiculo">Vehículo:</label>
+                            <input type="text" id="vehiculo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="falla">Falla Reportada:</label>
+                            <textarea id="falla" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <button type="submit" class="save-button">💾 Guardar Vehículo</button>
+                    </form>
+                </div>
+                
+                <div id="vehiculoInfo" class="vehiculo-info">
+                    <h3>✅ Vehículo Registrado</h3>
+                    <div class="info-item">
+                        <span class="info-label">Dueño:</span>
+                        <span id="infoDuenio"></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Vehículo:</span>
+                        <span id="infoVehiculo"></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Falla:</span>
+                        <span id="infoFalla"></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Email:</span>
+                        <span id="infoEmail"></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Estado:</span>
+                        <span id="infoEstado"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/scripts/scan.js"></script>
+</body>
+</html>

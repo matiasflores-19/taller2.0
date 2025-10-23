@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller Mecánico - Sistema de Gestión</title>
+    <link rel="stylesheet" href="estilos/index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔧 Taller Mecánico</h1>
+            <p>Sistema de Gestión de Vehículos</p>
+        </div>
+        
+<a href="/scan" class="card scan-card">
+    <div style="font-size: 3rem; margin-bottom: 15px;">📁</div>
+    <h3>Cargar Imagen de Patente</h3>
+    <p>Sube imágenes de patentes desde tu ordenador</p>
+</a>
+            
+            <a href="/vehiculos" class="card">
+                <div style="font-size: 3rem; margin-bottom: 15px;">🚗</div>
+                <h3>Ver Vehículos</h3>
+                <p>Consulta el listado completo de vehículos en el taller</p>
+            </a>
+            
+            <div class="card">
+                <div style="font-size: 3rem; margin-bottom: 15px;">📊</div>
+                <h3>Estadísticas</h3>
+                <p>Visualiza reportes y estadísticas del taller</p>
+            </div>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number" id="total-vehiculos">0</div>
+                <div class="stat-label">Vehículos Registrados</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="en-taller">0</div>
+                <div class="stat-label">En Taller</div>
+            </div>
+            <div class="stat-card">
+                <div style="font-size: 2rem; margin-bottom: 5px;">✅</div>
+                <div class="stat-label">Sistema Activo</div>
+            </div>
+        </div>
+    </div>
+<script src="/scripts/index.js"></script>
+</body>
+</html>

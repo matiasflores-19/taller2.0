@@ -1,0 +1,200 @@
+/* Vehiculos page styles */
+.vehiculos-list {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 40px;
+    box-shadow: var(--shadow-lg);
+    margin-top: 20px;
+}
+
+.vehiculo-card {
+    border: 1px solid #e0e0e0;
+    border-radius: var(--border-radius);
+    padding: 25px;
+    margin-bottom: 20px;
+    transition: var(--transition);
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.vehiculo-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--secondary);
+    transition: var(--transition);
+}
+
+.vehiculo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--secondary);
+}
+
+.vehiculo-card:hover::before {
+    width: 6px;
+    background: var(--accent);
+}
+
+.vehiculo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.patente {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--dark);
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
+}
+
+.estado {
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.estado.en-taller {
+    background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+    color: #e17055;
+}
+
+.estado.reparado {
+    background: linear-gradient(135deg, #55efc4 0%, #00b894 100%);
+    color: var(--white);
+}
+
+.estado.entregado {
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+    color: var(--white);
+}
+
+.estado.pendiente {
+    background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+    color: var(--white);
+}
+
+.vehiculo-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.info-item {
+    margin-bottom: 8px;
+}
+
+.info-label {
+    font-weight: 600;
+    color: var(--gray);
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.info-value {
+    color: var(--dark);
+    font-weight: 500;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px 40px;
+    color: var(--gray);
+}
+
+.empty-state-icon {
+    font-size: 5rem;
+    margin-bottom: 25px;
+    opacity: 0.5;
+    display: block;
+}
+
+.empty-state h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--dark);
+}
+
+.empty-state p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Filtros */
+.filtros {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin-bottom: 25px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.filtro-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filtro-label {
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.filtro-select {
+    padding: 8px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background: var(--white);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filtro-select:focus {
+    border-color: var(--secondary);
+    outline: none;
+}
+
+/* Responsive para vehiculos */
+@media (max-width: 768px) {
+    .vehiculos-list {
+        padding: 25px 20px;
+    }
+    
+    .vehiculo-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .patente {
+        font-size: 1.5rem;
+    }
+    
+    .vehiculo-info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .filtros {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

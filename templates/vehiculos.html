@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+    <link rel="stylesheet" href="/estilos/vehiculos.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehículos - Taller Mecánico</title>
+    
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-button">← Volver al Inicio</a>
+        
+        <div class="header">
+            <h1>🚗 Vehículos en Taller</h1>
+            <p>Listado completo de vehículos registrados</p>
+        </div>
+        
+        <div class="vehiculos-list">
+            {% if vehiculos %}
+                {% for vehiculo in vehiculos %}
+                <div class="vehiculo-card">
+                    <div class="vehiculo-header">
+                        <div class="patente">{{ vehiculo[1] }}</div>
+                        <div class="estado {{ vehiculo[7].lower().replace(' ', '-') }}">
+                            {{ vehiculo[7] }}
+                        </div>
+                    </div>
+                    
+                    <div class="vehiculo-info">
+                        <div class="info-item">
+                            <div class="info-label">Dueño:</div>
+                            <div>{{ vehiculo[2] }}</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Vehículo:</div>
+                            <div>{{ vehiculo[3] }}</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Email:</div>
+                            <div>{{ vehiculo[5] }}</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Ingreso:</div>
+                            <div>{{ vehiculo[6] }}</div>
+                        </div>
+                    </div>
+                    
+                    {% if vehiculo[4] %}
+                    <div class="info-item">
+                        <div class="info-label">Falla reportada:</div>
+                        <div>{{ vehiculo[4] }}</div>
+                    </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="empty-state">
+                    <div style="font-size: 4rem; margin-bottom: 20px; opacity: 0.5;">🚗</div>
+                    <h3>No hay vehículos registrados</h3>
+                    <p>Escanea patentes para agregar vehículos al sistema</p>
+                    <a href="/scan" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background: #667eea; color: white; text-decoration: none; border-radius: 5px;">
+                        Ir a Escanear
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
